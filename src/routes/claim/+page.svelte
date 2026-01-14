@@ -28,7 +28,16 @@
 	</div>
 
 	<div class="z-10 w-full max-w-lg">
-		{#if !data.valid}
+		{#if form?.success}
+			<!-- Success State -->
+			<div
+				class="animate-pulse rounded-xl border border-green-500/50 bg-green-900/20 p-8 text-center backdrop-blur-sm"
+			>
+				<div class="mb-4 text-6xl">🎉</div>
+				<h1 class="mb-2 text-3xl font-bold text-green-400">REGISTERED</h1>
+				<p class="text-gray-300">Redirecting to Leaderboard...</p>
+			</div>
+		{:else if !data.valid}
 			<!-- Error State -->
 			<div
 				class="rounded-xl border border-red-500/50 bg-red-900/20 p-8 text-center backdrop-blur-sm"
@@ -39,15 +48,6 @@
 				<a href="/" class="mt-6 inline-block text-blue-400 underline hover:text-blue-300">
 					Go to Leaderboard
 				</a>
-			</div>
-		{:else if form?.success}
-			<!-- Success State -->
-			<div
-				class="animate-pulse rounded-xl border border-green-500/50 bg-green-900/20 p-8 text-center backdrop-blur-sm"
-			>
-				<div class="mb-4 text-6xl">🎉</div>
-				<h1 class="mb-2 text-3xl font-bold text-green-400">REGISTERED</h1>
-				<p class="text-gray-300">Redirecting to Leaderboard...</p>
 			</div>
 		{:else}
 			<!-- Registration Form -->
