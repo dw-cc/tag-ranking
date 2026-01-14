@@ -78,13 +78,11 @@
 							name="nickname"
 							id="nickname"
 							required
-							maxlength="12"
-							placeholder="ENTER NAME"
-							class="w-full rounded-lg border border-gray-600 bg-black/50 px-4 py-3 font-mono text-xl text-white uppercase placeholder-gray-700 transition-all focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:outline-none"
+							maxlength="20"
+							placeholder="名前を入力"
+							class="w-full rounded-lg border border-gray-600 bg-black/50 px-4 py-3 font-mono text-xl text-white placeholder-gray-700 transition-all focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:outline-none"
 						/>
 					</div>
-
-
 
 					<button
 						type="submit"
