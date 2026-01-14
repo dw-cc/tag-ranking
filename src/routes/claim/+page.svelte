@@ -28,7 +28,16 @@
 	</div>
 
 	<div class="z-10 w-full max-w-lg">
-		{#if !data.valid}
+		{#if form?.success}
+			<!-- Success State -->
+			<div
+				class="animate-pulse rounded-xl border border-green-500/50 bg-green-900/20 p-8 text-center backdrop-blur-sm"
+			>
+				<div class="mb-4 text-6xl">🎉</div>
+				<h1 class="mb-2 text-3xl font-bold text-green-400">REGISTERED</h1>
+				<p class="text-gray-300">Redirecting to Leaderboard...</p>
+			</div>
+		{:else if !data.valid}
 			<!-- Error State -->
 			<div
 				class="rounded-xl border border-red-500/50 bg-red-900/20 p-8 text-center backdrop-blur-sm"
@@ -39,15 +48,6 @@
 				<a href="/" class="mt-6 inline-block text-blue-400 underline hover:text-blue-300">
 					Go to Leaderboard
 				</a>
-			</div>
-		{:else if form?.success}
-			<!-- Success State -->
-			<div
-				class="animate-pulse rounded-xl border border-green-500/50 bg-green-900/20 p-8 text-center backdrop-blur-sm"
-			>
-				<div class="mb-4 text-6xl">🎉</div>
-				<h1 class="mb-2 text-3xl font-bold text-green-400">REGISTERED</h1>
-				<p class="text-gray-300">Redirecting to Leaderboard...</p>
 			</div>
 		{:else}
 			<!-- Registration Form -->
@@ -78,27 +78,10 @@
 							name="nickname"
 							id="nickname"
 							required
-							maxlength="12"
-							placeholder="ENTER NAME"
-							class="w-full rounded-lg border border-gray-600 bg-black/50 px-4 py-3 font-mono text-xl text-white uppercase placeholder-gray-700 transition-all focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:outline-none"
+							maxlength="20"
+							placeholder="名前を入力"
+							class="w-full rounded-lg border border-gray-600 bg-black/50 px-4 py-3 font-mono text-xl text-white placeholder-gray-700 transition-all focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:outline-none"
 						/>
-					</div>
-
-					<div>
-						<label
-							for="contact"
-							class="mb-2 block text-sm font-bold tracking-wide text-gray-500 uppercase"
-						>
-							Contact Info (Optional)
-						</label>
-						<input
-							type="text"
-							name="contact"
-							id="contact"
-							placeholder="Email / Twitter"
-							class="w-full rounded-lg border border-gray-800 bg-black/50 px-4 py-3 text-base text-gray-400 transition-all focus:border-purple-500 focus:outline-none"
-						/>
-						<p class="mt-1 text-xs text-gray-600">For winner notification only.</p>
 					</div>
 
 					<button
